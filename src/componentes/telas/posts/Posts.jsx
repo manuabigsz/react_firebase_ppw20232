@@ -6,6 +6,7 @@ import Carregando from "../../comuns/Carregando";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebaseConfig";
 import { addPostFirebase, deletePostFirebase, getPostsUIDFirebase, updatePostFirebase } from "../../servicos/PostsService";
+import { Navigate } from "react-router-dom";
 
 function Posts() {
 
@@ -113,6 +114,8 @@ function Posts() {
                     <Form />
                 </PostsContext.Provider>
             )
+        }else{
+            return <Navigate to="/" />
         }
    
 
